@@ -23,7 +23,7 @@ function App() {
       setMovies([]);
       setErrorMessage(false);
 
-      const { results } = await fetchMovies(search);
+      const results = await fetchMovies(search);
       if (results.length > 0) {
         setMovies(results);
       } else {

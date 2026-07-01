@@ -16,7 +16,7 @@ async function fetchMovies(search: string) {
     },
   );
 
-  return response.data;
+  return response.data.results;
 }
 
 export default fetchMovies;

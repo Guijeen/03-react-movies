@@ -3,12 +3,12 @@ import css from "./MovieModal.module.css";
 import { createPortal } from "react-dom";
 import type { Movie } from "../../types/movie";
 
-interface ModalProps {
+interface MovieModalProps {
   movie: Movie;
   onClose: () => void;
 }
 
-function MovieModal({ onClose, movie }: ModalProps) {
+function MovieModal({ onClose, movie }: MovieModalProps) {
   useEffect(() => {
     const handlerEscape = (event: KeyboardEvent) => {
       if (event.code === "Escape") {
@@ -55,11 +55,10 @@ function MovieModal({ onClose, movie }: ModalProps) {
           <h2>{movie.title}</h2>
           <p>{movie.overview}</p>
           <p>
-            <strong>Release Date:{movie.release_date}</strong>{" "}
-            movie_release_date
+            <strong>Release Date:</strong> {movie.release_date}
           </p>
           <p>
-            <strong>Rating:{movie.vote_average}</strong> movie_vote_average/10
+            <strong>Rating:</strong> {movie.vote_average}/10
           </p>
         </div>
       </div>
